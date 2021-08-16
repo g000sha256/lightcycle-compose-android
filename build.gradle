@@ -1,0 +1,18 @@
+buildscript {
+    apply from: "$rootDir/dependencies.gradle"
+    dependencies {
+        classpath plugin.android
+        classpath plugin.kotlin
+        classpath plugin.maven
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}

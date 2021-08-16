@@ -1,0 +1,27 @@
+apply plugin: "com.android.library"
+apply plugin: "com.github.dcendents.android-maven"
+apply plugin: "kotlin-android"
+android {
+    buildFeatures.compose = true
+    buildToolsVersion "30.0.3"
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    compileSdkVersion 30
+    composeOptions {
+        kotlinCompilerExtensionVersion versionCompose
+        kotlinCompilerVersion versionKotlin
+    }
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 30
+    }
+    sourceSets.main.java.srcDirs = ["src/main/kotlin"]
+}
+dependencies {
+    implementation lib.androidX.compose.runtime
+    implementation lib.androidX.compose.ui
+    implementation lib.androidX.lifecycleCommon
+    implementation lib.jetBrains.kotlinStdLib
+}
